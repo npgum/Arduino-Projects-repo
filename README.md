@@ -121,16 +121,6 @@ Arduino Home & Automation Projects — practical, well-documented projects with 
 | HMC5883L | Digital 3-axis compass module. I2C interface. Used for heading/direction sensing. | [Source](https://github.com/adafruit/Adafruit_HMC5883_Unified) | Adafruit HMC5883 Unified |
 
 
-### 📡 Communication & IR (5)
-
-| Sensor | Description | GitHub Library | Arduino Library |
-|--------|-------------|----------------|-----------------|
-| HC-05/HC-06 Bluetooth | Bluetooth 2.0 serial module. HC-05 supports master+slave, HC-06 slave only. 9600 baud. | [Source](https://github.com/felias-fogg/BluetoothSerial) | SoftwareSerial + AT commands |
-| nRF24L01 | 2.4GHz wireless transceiver. 1km+ range with antenna version. SPI interface. Multiple nodes. | [Source](https://github.com/nRF24/RF24) | RF24 Library |
-| ESP8266 (WiFi) | ESP-01/ESP-12 WiFi module. Can also run standalone programs. Connect Arduino to internet. | [Source](https://github.com/ekstrand/ESP8266wifi) | ESP8266WiFi or SoftwareSerial AT mode |
-| LoRa SX1278/SX1276 | Long-range (up to 10km) low-power wireless. 433MHz/868MHz/915MHz. SPI interface. | [Source](https://github.com/sandeepmistry/arduino-LoRa) | arduino-LoRa by Sandeep Mistry |
-| IR Receiver/LED TSOP38238 | 38kHz IR receiver module. Decode from TV remotes, AC remotes. Digital output. | [Source](https://github.com/crankyoldgit/IRremoteESP8266) | IRremote or IRemoteESP8266 |
-
 
 
 ### 🔒 Security & Biometrics (3)
@@ -182,6 +172,20 @@ Arduino Home & Automation Projects — practical, well-documented projects with 
 | Sound Sensor (KY-037/KY-038) | Sound detection module. Analog (volume level) + digital (threshold trigger) output. | [Source](https://github.com/adafruit/Adafruit_Sound_Sensor) | Built into Arduino (analogRead/digitalRead) |
 | DFPlayer Mini MP3 | Mini MP3 player module. Plays MP3/WAV from micro SD card or USB. Serial control. | [Source](https://github.com/DFRobot/DFRobotDFPlayerMini) | DFRobotDFPlayerMini |
 | MAX98357A I2S Amplifier | 3W mono Class D amplifier with I2S input. Direct digital audio from I2S pins. | [Source](https://github.com/adafruit/Adafruit_MAX98357) | Adafruit_MAX98357 |
+
+---
+
+## 📡 Communication & IR (5)
+
+| Sensor | Description | GitHub Library | Arduino Library |
+|--------|-------------|----------------|-----------------|
+| HC-05/HC-06 Bluetooth | Bluetooth 2.0 serial module. HC-05 supports master+slave, HC-06 slave only. 9600 baud. | [Source](https://github.com/felias-fogg/BluetoothSerial) | SoftwareSerial + AT commands |
+| nRF24L01 | 2.4GHz wireless transceiver. 1km+ range with antenna version. SPI interface. Multiple nodes. | [Source](https://github.com/nRF24/RF24) | RF24 Library |
+| ESP8266 (WiFi) | ESP-01/ESP-12 WiFi module. Can also run standalone programs. Connect Arduino to internet. | [Source](https://github.com/ekstrand/ESP8266wifi) | ESP8266WiFi or SoftwareSerial AT mode |
+| LoRa SX1278/SX1276 | Long-range (up to 10km) low-power wireless. 433MHz/868MHz/915MHz. SPI interface. | [Source](https://github.com/sandeepmistry/arduino-LoRa) | arduino-LoRa by Sandeep Mistry |
+| IR Receiver/LED TSOP38238 | 38kHz IR receiver module. Decode from TV remotes, AC remotes. Digital output. | [Source](https://github.com/crankyoldgit/IRremoteESP8266) | IRremote or IRemoteESP8266 |
+
+
 
 ---
 
