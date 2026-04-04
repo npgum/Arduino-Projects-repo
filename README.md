@@ -154,15 +154,6 @@ Arduino Home & Automation Projects — practical, well-documented projects with 
 
 ---
 
-## ⚡ Motors, Drivers & Relays (4)
-
-| Sensor | Description | GitHub Library | Library |
-|--------|-------------|----------------|-----------------|
-| 5V Relay Module | Electromechanical relay. Single or 4-channel. Active-low trigger. Switches AC/DC loads up to 10A. | [Source](https://github.com/adafruit/Adafruit_FeatherWing_Dual_Relay) | Built into Arduino (digitalWrite) |
-| SG90 Micro Servo | 9g micro servo motor. 180 degree rotation. 4.8V operating. Internal gear. | [Source](https://github.com/RoboticsBrno/ServoESP32) | Servo.h (built-in) |
-| L298N Motor Driver | Dual H-bridge motor driver. Controls 2 DC motors or 1 stepper. Up to 2A per channel. | [Source](https://github.com/gioblu/PJON) | Built into Arduino (digitalWrite/analogWrite) |
-| L293D Motor Shield | Arduino shield for driving 2 stepper motors or 4 DC motors. Up to 600mA per channel. | [Source](https://github.com/adafruit/Adafruit_Motor_Shield_V2_Library) | Adafruit Motor Shield V2 Library |
-
 ---
 
 ## 🔊 Sound & Audio (3)
@@ -186,10 +177,14 @@ Arduino Home & Automation Projects — practical, well-documented projects with 
 | IR Receiver/LED TSOP38238 | 38kHz IR receiver module. Decode from TV remotes, AC remotes. Digital output. | [Source](https://github.com/Arduino-IRremote/Arduino-IRremote) | IRremote Ken Shirriff's |
 
 
-### ⚡ Actuators (5)
+### ⚡ Actuators (9)
 
 | Actuator | Description | GitHub Library | Arduino Library |
 |----------|-------------|----------------|-----------------|
+| 5V Relay Module | Electromechanical relay. Single or 4-channel. Active-low trigger. Switches AC/DC loads up to 10A. | [Source](https://github.com/adafruit/Adafruit_FeatherWing_Dual_Relay) | Built into Arduino (digitalWrite) |
+| SG90 Micro Servo | 9g micro servo motor. 180 degree rotation. 4.8V operating. Internal gear. | [Source](https://github.com/RoboticsBrno/ServoESP32) | Servo.h (built-in) |
+| L298N Motor Driver | Dual H-bridge motor driver. Controls 2 DC motors or 1 stepper. Up to 2A per channel. | [Source](https://github.com/gioblu/PJON) | Built into Arduino (digitalWrite/analogWrite) |
+| L293D Motor Shield | Arduino shield for driving 2 stepper motors or 4 DC motors. Up to 600mA per channel. | [Source](https://github.com/adafruit/Adafruit_Motor_Shield_V2_Library) | Adafruit Motor Shield V2 Library |
 | 28BYJ-48 Stepper Motor | Cheap, precise 5V stepper with ULN2003 driver board. Great for clocks, gates, and small robots. | [Source](https://github.com/arduino-libraries/Stepper) | Stepper (built-in) |
 | A4988 / DRV8825 Driver | Microstepping drivers for NEMA 17/23 stepper motors. Controls speed/direction with 2 pins. | [Source](https://github.com/laurb9/StepperDriver) | A4988 Stepper Driver |
 | MG996R Metal Servo | High torque (10kg-cm) standard servo with metal gears. Good for robot arms/car steering. | [Source](https://github.com/RoboticsBrno/ServoESP32) | Servo.h (built-in) |
