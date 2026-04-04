@@ -95,6 +95,9 @@ Use this when a library isn't available in the Arduino Library Manager, or when 
 | ZIP library install fails | Ensure the ZIP contains a single top-level folder, not loose files |
 | Library not showing in Examples menu | Restart the IDE, then check if the folder is in the correct libraries path |
 
+
+### 🌡️ Temperature & Humidity (10)
+
 | Sensor | Description | GitHub Library | Library |
 |--------|-------------|----------------|-----------------|
 | DHT11 | Low-cost digital temperature (0-50C) and humidity (20-80%) sensor. Slow but reliable. Max read every 2s. | [Source](https://github.com/adafruit/DHT-sensor-library) | DHT sensor library by Adafruit |
