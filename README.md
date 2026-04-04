@@ -91,6 +91,7 @@ Install via Arduino IDE → **Sketch → Include Library → Manage Libraries**
 
 
 
+
 ### 🌡️ Temperature & Humidity (10)
 
 | Sensor | Description | GitHub Library | Arduino Library |
@@ -136,22 +137,22 @@ Install via Arduino IDE → **Sketch → Include Library → Manage Libraries**
 | Tilt Sensor (Ball Switch) | Simple ball-in-cylinder tilt switch. Digital output only (open/closed). Low cost orientation detection. | [Source](https://github.com/adafruit/Tilt_Sensor) | Built into Arduino (digitalRead) |
 | Vibration Sensor (SW-420) | Vibration/impact detection module. Digital output with adjustable threshold potentiometer. | [Source](https://github.com/adafruit/Vibration_Sensor) | Built into Arduino (digitalRead) |
 
-### 🌱 Soil & Water (7)
+### 🌱 Soil & Water (6)
 
 | Sensor | Description | GitHub Library | Arduino Library |
 |--------|-------------|----------------|-----------------|
 | Soil Moisture (Capacitive) | Capacitive soil moisture sensor. Corrosion-resistant. Analog output (lower value = more moisture). | [Source](https://github.com/ArminJo/Capacitive-Soil-Moisture-Sensor-Library) | Capacitive Soil Moisture Library |
 | Soil Moisture (Resistive) | Cheap resistive soil moisture sensor. Corrodes quickly (weeks). Higher value = more moisture. | [Source](https://github.com/adafruit/Adafruit_Capacitive_Soil_Moisture) | Built into Arduino (analogRead) |
 | Rain Sensor (FC-37) | Rain/water drop detection. Analog output (wetness level) + digital threshold output. | [Source](https://github.com/adafruit/Adafruit_Rain_Sensor) | Built into Arduino (analogRead) |
-| LDR (Photoresistor) | Light-dependent resistor. Voltage divider with 10k resistor. Higher value = more light (typically). | [Source](https://github.com/adafruit/Adafruit_LDR) | Built into Arduino (analogRead) |
 | Water Level Sensor | Analog water level sensor. Measures water depth by resistance. Drop shape pad. | [Source](https://github.com/adafruit/Adafruit_Water_Level_Sensor) | Built into Arduino (analogRead) |
 | Flow Sensor (YF-S201) | Water flow rate sensor. Hall effect based. Measures 1-30 L/min. Digital pulse output. | [Source](https://github.com/miguel5612/Arduino_water_flow_meter) | Custom (pulse counting) |
 | PH Sensor (Gravity Analog) | Analog pH meter for water quality testing. 0-14 pH range. BNC connector. | [Source](https://github.com/DFRobot/DFRobot_PH) | DFRobot PH Library |
 
-### 💡 Light & Vision (4)
+### 💡 Light & Vision (5)
 
 | Sensor | Description | GitHub Library | Arduino Library |
 |--------|-------------|----------------|-----------------|
+| LDR (Photoresistor) | Light-dependent resistor. Voltage divider with 10k resistor. Higher value = more light (typically). | [Source](https://github.com/adafruit/Adafruit_LDR) | Built into Arduino (analogRead) |
 | BH1750 | Digital ambient light sensor. Measures lux (1-65535). I2C interface. Much more accurate than LDR. | [Source](https://github.com/claws/BH1750) | BH1750 Library |
 | TCS3200/TCS34725 | RGB color light-to-frequency converter. Detects actual colors, not just brightness. | [Source](https://github.com/adafruit/Adafruit_TCS34725) | Adafruit TCS34725 |
 | UV Sensor (VEML6070/ML8511) | Measures UV-A/UV-B radiation. I2C or analog output. Sun exposure monitoring. | [Source](https://github.com/adafruit/Adafruit_VEML6070) | Adafruit VEML6070 |
