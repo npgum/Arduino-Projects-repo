@@ -1,6 +1,8 @@
 # dotinoproject
 
-Arduino Home & Automation Projects — practical, well-documented projects with  wiring pin and sensor reference catalog.
+Arduino projects and sensor reference catalog.
+
+We want to appreciate and recognize the **open-source library creators and makers** whose hard work made these projects possible.**To the makers who write the library, drivers, document the wiring, and share their knowledge.** Thank you.
 
 ---
 
@@ -41,21 +43,57 @@ Arduino Home & Automation Projects — practical, well-documented projects with 
 
 ---
 
-### 🫶 Built by the Community
 
-Every project in this repository stands on the shoulders of giants. We want to take a moment to appreciate and recognize the **open-source library creators and makers** whose hard work made these projects possible.
-
-From the precise temperature readings of the DHT libraries to the seamless displays driven by LCD wrappers, and the robust drivers for motors, relays, and wireless modules — none of this exists in a vacuum. We are deeply grateful to the developers, tinkerers, and educators who freely share their code, troubleshoot issues, and document their hardware so we can build, learn, and innovate without reinventing the wheel.
-
-**To the makers who write the drivers, document the wiring, and share their knowledge:** Thank you. This project is as much yours as it is ours.
-
----
 
 ## Sensors
+---
 
+### Quick Install Guide
+1. **Arduino IDE**: Sketch → Include Library → Manage Libraries
+2. **Search**: Type the library name from the table
+3. **Install**: Click the Install button
+4. **Verify**: File → Examples → [Library] → [Example Sketch]
 
+### 🔧 Manual Library Installation
 
-### 🌡️ Temperature & Humidity (10)
+Use this when a library isn't available in the Arduino Library Manager, or when you need a specific version from GitHub.
+
+**Step 1: Download the library**
+- Visit the GitHub link from the sensor table above
+- Click the green **Code** button → **Download ZIP**
+- Or clone with: `git clone <repo-url>`
+
+**Step 2: Install via Arduino IDE**
+- Open Arduino IDE → Sketch → Include Library → **Add .ZIP Library**
+- Select the downloaded ZIP file
+- The IDE handles extraction and placement automatically
+
+**Step 3: Install manually (folder method)**
+- Extract the ZIP file
+- Rename the folder to match the library name (no `-master` or `-main` suffix)
+- Move it to your Arduino libraries folder:
+  - **Linux**: `~/Arduino/libraries/`
+  - **Windows**: `Documents\Arduino\libraries\`
+  - **macOS**: `~/Documents/Arduino/libraries/`
+- Restart the Arduino IDE
+
+**Step 4: Handle dependencies**
+- Some libraries require others (e.g., DHT needs **Adafruit Unified Sensor**, OLED needs **Adafruit GFX**)
+- Install all dependencies listed alongside each sensor before compiling
+- Use the Library Manager for dependencies when possible — it resolves transitive deps
+
+**Step 5: Verify**
+- Restart the IDE after installing
+- Open File → Examples → [Library Name] → [Example]
+- Compile a test sketch to confirm no missing headers
+
+**Troubleshooting**
+| Problem | Solution |
+|---------|----------|
+| `No such file or directory` error | Library folder name doesn't match the `#include` name — rename it |
+| Multiple library versions found | Remove old versions from `~/Arduino/libraries/`, keep only one |
+| ZIP library install fails | Ensure the ZIP contains a single top-level folder, not loose files |
+| Library not showing in Examples menu | Restart the IDE, then check if the folder is in the correct libraries path |
 
 | Sensor | Description | GitHub Library | Library |
 |--------|-------------|----------------|-----------------|
@@ -76,7 +114,7 @@ From the precise temperature readings of the DHT libraries to the seamless displ
 |--------|-------------|----------------|-----------------|
 | MQ-2 | Detects LPG, propane, hydrogen, methane, alcohol, and smoke. Widely used for gas leak detection. | [Source](https://github.com/miguel5612/MQSensorsLib) | MQUnifiedsensor (MQSensorsLib) |
 | MQ-7 | Carbon monoxide (CO) detection. Requires heating cycle for accurate readings. | [Source](https://github.com/miguel5612/MQSensorsLib) | MQUnifiedsensor (MQSensorsLib) |
-| MQ-135 | General air quality sensor. Detects NH3, NOx, alcohol, benzene, smoke, and CO2. Indoor air monitoring. | [Source](https://github.com/GeorgK/MQ135) | MQ135 Library |
+| MQ-135 | General air quality sensor. Detects NH3, NOx, alcohol, benzene, smoke, and CO2. Indoor air monitoring. | [Source](https://github.com/Bobbo117/MQ135-Air-Quality-Sensor) | MQ135 Library |
 | SGP30 | Multi-pixel gas sensor measuring TVOC and CO2 equivalent via I2C. More accurate than MQ series. | [Source](https://github.com/adafruit/Adafruit_SGP30) | Adafruit SGP30 Library |
 | Dust Sensor (GP2Y1010AU0F) | Optical dust/particulate sensor. Measures PM2.5/PM10 concentration. Analog output. | [Source](https://github.com/mickey9801/GP2Y1010AU0F) | GP2Y1010AU0F Dust Sensor |
 | SDS011 | Professional PM2.5/PM10 laser dust sensor. UART interface. More accurate than GP2Y. | [Source](https://github.com/ricki-z/SDS011) | SDS011 Luftdaten Library |
@@ -210,6 +248,50 @@ From the precise temperature readings of the DHT libraries to the seamless displ
 | ESP32 (Co-processor) | Dual-core WiFi/BT module. Can run Arduino sketches or act as modem for Uno via UART. | [Source](https://github.com/nkolban/ESP32_BLE_Arduino) | ESP32 Arduino Core |
 | MCP2515 CAN Bus | Controller Area Network transceiver for automotive/industrial buses. SPI interface. | [Source](https://github.com/coryjfowler/MCP_CAN_lib) | MCP_CAN_lib |
 
+### ❤️ Health & Biomedical (3)
+
+| Sensor | Description | GitHub Library | Library |
+|--------|-------------|----------------|-----------------|
+| MAX30102 | Pulse oximeter and heart rate monitor via PPG. Measures SpO2 and BPM from fingertip. I2C interface. | [Source](https://github.com/sparkfun/SparkFun_MAX3010x_Sensor_Library) | SparkFun MAX3010x |
+| AD8232 | ECG/heart electrical signal module. Single-lead output amplifies cardiac activity. Analog output. | Custom | Built into Arduino (analogRead) |
+| MAX30101 | 3-wavelength PPG for SpO2, heart rate, and respiration rate. More versatile than MAX30102. I2C. | [Source](https://github.com/tutrp/Max30101-Arduino-Library) | MAX30101 Arduino |
+
+### 🌡️ IR & Thermal (2)
+
+| Sensor | Description | GitHub Library | Library |
+|--------|-------------|----------------|-----------------|
+| MLX90614 | Non-contact IR thermometer. Measures ambient and object temp (-40 to 300C). +/-0.5C accuracy. I2C. | [Source](https://github.com/adafruit/Adafruit-MLX90614-Library) | Adafruit MLX90614 |
+| MLX90640 | 32x24 pixel thermal imaging camera. Full heat map visualization. I2C interface. Real-time IR imaging. | [Source](https://github.com/adafruit/Adafruit_MLX90640) | Adafruit MLX90640 |
+
+### 🧭 Advanced IMU (3)
+
+| Sensor | Description | GitHub Library | Library |
+|--------|-------------|----------------|-----------------|
+| LSM6DS3 | 6-axis IMU: 3-axis accel + gyro. Lower power than MPU6050. SPI/I2C. Built-in step counter. | [Source](https://github.com/adafruit/Adafruit_LSM6DS) | Adafruit LSM6DS |
+| BNO055 | 9-axis absolute orientation sensor. On-chip sensor fusion outputs quaternion/Euler angles directly. No external math. | [Source](https://github.com/adafruit/Adafruit_BNO055) | Adafruit BNO055 |
+| BNO080/BNO085 | VR-grade IMU with ARM Cortex M0 processing sensor fusion. Rotation vector output. AR/VR ready. I2C. | [Source](https://github.com/sparkfun/SparkFun_BNO08x_Arduino_Library) | SparkFun BNO08x |
+
+### 🌡️ Pressure & Weather (2)
+
+| Sensor | Description | GitHub Library | Library |
+|--------|-------------|----------------|-----------------|
+| LPS22HB | Miniature piezoresistive pressure sensor (260-1260 hPa). I2C/SPI. Used in drones and wearables. | [Source](https://github.com/pololu/lps22hb-arduino) | Pololu LPS22HB |
+| MS5611 | High-resolution barometric altimeter (10cm resolution). I2C/SPI. Common in flight controllers. | [Source](https://github.com/millerlp/MS5611) | MS5611 Arduino |
+
+### 🌱 Water Quality (2)
+
+| Sensor | Description | GitHub Library | Library |
+|--------|-------------|----------------|-----------------|
+| TDS Meter (Gravity) | Water total dissolved solids sensor. Measures water purity and conductivity. Analog output. | [Source](https://github.com/DFRobot/DFRobot_TDS) | DFRobot TDS |
+| Turbidity Sensor | Detects water clarity via light scattering. Analog output. Water quality monitoring. | Custom | Built into Arduino (analogRead) |
+
+### 🔊 Sound (1)
+
+| Sensor | Description | GitHub Library | Library |
+|--------|-------------|----------------|-----------------|
+| INMP441 | MEMS omnidirectional microphone with I2S digital output. High-quality audio capture. | Custom | I2S built-in (ESP32) |
+
+<!--
 ### 📟 Compatible Boards (7)
 
 | Board | Description | GitHub Core | Notes |
@@ -222,14 +304,7 @@ From the precise temperature readings of the DHT libraries to the seamless displ
 | Digispark (ATtiny85) | ATtiny85, 6KB Flash, 6 pins. Programmable via USB (bitbang). | [Source](https://github.com/digistump/DigistumpArduino) | Tiny standalone projects |
 | Teensy 4.1 | ARM Cortex-M7 (600MHz). Huge memory, high speed. | [Source](https://github.com/PaulStoffregen/cores) | High-performance, audio, complex graphics |
 
-
----
-
-### Quick Install Guide
-1. **Arduino IDE**: Sketch → Include Library → Manage Libraries
-2. **Search**: Type the library name from the table
-3. **Install**: Click the Install button
-4. **Verify**: File → Examples → [Library] → [Example Sketch]
+-->
 
 
 ---
@@ -260,5 +335,5 @@ dotinoproject/
 
 
 
----
+
 
