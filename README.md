@@ -288,7 +288,7 @@ Use this when a library isn't available in the Arduino Library Manager, or when 
 | Sensor | Description | GitHub Library | Library |
 |--------|-------------|----------------|-----------------|
 | TDS Meter (Gravity) | Water total dissolved solids sensor. Measures water purity and conductivity. Analog output. | [Source](https://github.com/DFRobot/DFRobot_TDS) | DFRobot TDS |
-| Turbidity Sensor | Detects water clarity via light scattering. Analog output. Water quality monitoring. | Custom | Built into Arduino (analogRead) |
+| Turbidity Sensor SEN0189 | Detects water clarity via light scattering. Analog output. Water quality monitoring. | [Source]https://github.com/duyhuynh/Turbidity_Sensor/ | Arduino DTH_Turbidity_Sensor duyhuynh |
 
 ### 🔊 Sound (1)
 
