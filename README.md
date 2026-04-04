@@ -1,14 +1,9 @@
 # dotinoproject
 
-Arduino Home & Automation Projects — practical, well-documented projects with complete wiring diagrams and a 63-sensor reference catalog.
+Arduino Home & Automation Projects — practical, well-documented projects with  wiring pin and sensor reference catalog.
 
 ---
 
-## Quick Links
-
-- **[Sensor Reference (Obsidian)](../npg/Projects/dotinoproject/Sensors/)** — Internal wiki vault
-
----
 
 ## Projects
 
@@ -46,49 +41,7 @@ Arduino Home & Automation Projects — practical, well-documented projects with 
 
 ---
 
-## Required Libraries
-
-Install via Arduino IDE → **Sketch → Include Library → Manage Libraries**
-
-| Library | Author | Used By |
-|---------|--------|---------|
-| **DHT sensor library** | Adafruit | All DHT11/DHT22 projects |
-| **LiquidCrystal I2C** | Frank de Brabander | All LCD projects |
-| **Servo** | Arduino (built-in) | Servo projects |
-
----
-
-## Hardware Shopping List
-
-**Core:**
-- Arduino Uno R3 (or compatible)
-- Breadboard + jumper wires
-- USB cable (Type A to Type B)
-
-**Sensors:**
-- DHT11 or DHT22
-- HC-SR04 ultrasonic distance sensor
-- MQ-135 air quality sensor
-- PIR HC-SR501 motion sensor
-- Soil Moisture (capacitive)
-- LDR + 10k resistor
-
-**Displays & Feedback:**
-- 16x2 LCD with I2C
-- LEDs (red, green, yellow, blue) + 220ohm resistors
-- Active buzzer
-- Push buttons
-
-**Actuators:**
-- 5V Relay Module
-- Mini water pump (3-6V)
-- Micro Servo SG90
-- Potentiometer (10k)
-
-**Estimated cost:** ~$15-25 for a starter kit covering all projects.
-
----
-
+## Sensor
 
 
 
@@ -167,23 +120,6 @@ Install via Arduino IDE → **Sketch → Include Library → Manage Libraries**
 | ADXL345 | Digital 3-axis accelerometer. I2C/SPI. High resolution (13-bit). Tap/double-tap detection. | [Source](https://github.com/adafruit/Adafruit_ADXL345) | Adafruit ADXL345 |
 | HMC5883L | Digital 3-axis compass module. I2C interface. Used for heading/direction sensing. | [Source](https://github.com/adafruit/Adafruit_HMC5883_Unified) | Adafruit HMC5883 Unified |
 
-### 📺 Displays (4)
-
-| Sensor | Description | GitHub Library | Arduino Library |
-|--------|-------------|----------------|-----------------|
-| 16x2 LCD (HD44780) | 16 characters x 2 rows character LCD. Two wiring modes: parallel (6 pins) or I2C module (2 pins). | [Source](https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library) | LiquidCrystal (built-in) or LiquidCrystal_I2C |
-| OLED 0.96" SSD1306 | 128x64 pixel OLED display. I2C interface. Bright, high contrast, low power. | [Source](https://github.com/adafruit/Adafruit_SSD1306) | Adafruit SSD1306 + Adafruit GFX |
-| Nokia 5110 LCD | 84x48 pixel monochrome LCD. SPI interface. Cheap, large-ish screen. | [Source](https://github.com/adafruit/Adafruit-PCD8544-Nokia-5110-LCD-library) | Adafruit PCD8544 Nokia 5110 |
-| MAX7219 LED Dot Matrix | 8x8 LED dot matrix module (daisy-chainable). SPI communication. Can chain many modules. | [Source](https://github.com/markruys/arduino-Max72xxPanel) | Adafruit MAX7219 or MD_Parola |
-
-### ⚡ Motors, Drivers & Relays (4)
-
-| Sensor | Description | GitHub Library | Arduino Library |
-|--------|-------------|----------------|-----------------|
-| 5V Relay Module | Electromechanical relay. Single or 4-channel. Active-low trigger. Switches AC/DC loads up to 10A. | [Source](https://github.com/adafruit/Adafruit-Relay-Board) | Built into Arduino (digitalWrite) |
-| SG90 Micro Servo | 9g micro servo motor. 180 degree rotation. 4.8V operating. Internal gear. | [Source](https://github.com/RoboticsBrno/ServoESP32) | Servo.h (built-in) |
-| L298N Motor Driver | Dual H-bridge motor driver. Controls 2 DC motors or 1 stepper. Up to 2A per channel. | [Source](https://github.com/gioblu/PJON) | Built into Arduino (digitalWrite/analogWrite) |
-| L293D Motor Shield | Arduino shield for driving 2 stepper motors or 4 DC motors. Up to 600mA per channel. | [Source](https://github.com/adafruit/Adafruit_Motor_Shield_library) | Adafruit Motor Shield Library |
 
 ### 📡 Communication & IR (5)
 
@@ -195,13 +131,7 @@ Install via Arduino IDE → **Sketch → Include Library → Manage Libraries**
 | LoRa SX1278/SX1276 | Long-range (up to 10km) low-power wireless. 433MHz/868MHz/915MHz. SPI interface. | [Source](https://github.com/sandeepmistry/arduino-LoRa) | arduino-LoRa by Sandeep Mistry |
 | IR Receiver/LED TSOP38238 | 38kHz IR receiver module. Decode from TV remotes, AC remotes. Digital output. | [Source](https://github.com/crankyoldgit/IRremoteESP8266) | IRremote or IRemoteESP8266 |
 
-### 🔊 Sound & Audio (3)
 
-| Sensor | Description | GitHub Library | Arduino Library |
-|--------|-------------|----------------|-----------------|
-| Sound Sensor (KY-037/KY-038) | Sound detection module. Analog (volume level) + digital (threshold trigger) output. | [Source](https://github.com/adafruit/Adafruit_Sound_Sensor) | Built into Arduino (analogRead/digitalRead) |
-| DFPlayer Mini MP3 | Mini MP3 player module. Plays MP3/WAV from micro SD card or USB. Serial control. | [Source](https://github.com/DFRobot/DFRobotDFPlayerMini) | DFRobotDFPlayerMini |
-| MAX98357A I2S Amplifier | 3W mono Class D amplifier with I2S input. Direct digital audio from I2S pins. | [Source](https://github.com/adafruit/Adafruit_MAX98357) | Adafruit_MAX98357 |
 
 ### 🔒 Security & Biometrics (3)
 
@@ -223,17 +153,44 @@ Install via Arduino IDE → **Sketch → Include Library → Manage Libraries**
 
 ---
 
+## 📺 Displays (4)
+
+| Sensor | Description | GitHub Library | Arduino Library |
+|--------|-------------|----------------|-----------------|
+| 16x2 LCD (HD44780) | 16 characters x 2 rows character LCD. Two wiring modes: parallel (6 pins) or I2C module (2 pins). | [Source](https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library) | LiquidCrystal (built-in) or LiquidCrystal_I2C |
+| OLED 0.96" SSD1306 | 128x64 pixel OLED display. I2C interface. Bright, high contrast, low power. | [Source](https://github.com/adafruit/Adafruit_SSD1306) | Adafruit SSD1306 + Adafruit GFX |
+| Nokia 5110 LCD | 84x48 pixel monochrome LCD. SPI interface. Cheap, large-ish screen. | [Source](https://github.com/adafruit/Adafruit-PCD8544-Nokia-5110-LCD-library) | Adafruit PCD8544 Nokia 5110 |
+| MAX7219 LED Dot Matrix | 8x8 LED dot matrix module (daisy-chainable). SPI communication. Can chain many modules. | [Source](https://github.com/markruys/arduino-Max72xxPanel) | Adafruit MAX7219 or MD_Parola |
+
+---
+
+## ⚡ Motors, Drivers & Relays (4)
+
+| Sensor | Description | GitHub Library | Arduino Library |
+|--------|-------------|----------------|-----------------|
+| 5V Relay Module | Electromechanical relay. Single or 4-channel. Active-low trigger. Switches AC/DC loads up to 10A. | [Source](https://github.com/adafruit/Adafruit-Relay-Board) | Built into Arduino (digitalWrite) |
+| SG90 Micro Servo | 9g micro servo motor. 180 degree rotation. 4.8V operating. Internal gear. | [Source](https://github.com/RoboticsBrno/ServoESP32) | Servo.h (built-in) |
+| L298N Motor Driver | Dual H-bridge motor driver. Controls 2 DC motors or 1 stepper. Up to 2A per channel. | [Source](https://github.com/gioblu/PJON) | Built into Arduino (digitalWrite/analogWrite) |
+| L293D Motor Shield | Arduino shield for driving 2 stepper motors or 4 DC motors. Up to 600mA per channel. | [Source](https://github.com/adafruit/Adafruit_Motor_Shield_library) | Adafruit Motor Shield Library |
+
+---
+
+## 🔊 Sound & Audio (3)
+
+| Sensor | Description | GitHub Library | Arduino Library |
+|--------|-------------|----------------|-----------------|
+| Sound Sensor (KY-037/KY-038) | Sound detection module. Analog (volume level) + digital (threshold trigger) output. | [Source](https://github.com/adafruit/Adafruit_Sound_Sensor) | Built into Arduino (analogRead/digitalRead) |
+| DFPlayer Mini MP3 | Mini MP3 player module. Plays MP3/WAV from micro SD card or USB. Serial control. | [Source](https://github.com/DFRobot/DFRobotDFPlayerMini) | DFRobotDFPlayerMini |
+| MAX98357A I2S Amplifier | 3W mono Class D amplifier with I2S input. Direct digital audio from I2S pins. | [Source](https://github.com/adafruit/Adafruit_MAX98357) | Adafruit_MAX98357 |
+
+---
+
 ### Quick Install Guide
 1. **Arduino IDE**: Sketch → Include Library → Manage Libraries
 2. **Search**: Type the library name from the table
 3. **Install**: Click the Install button
 4. **Verify**: File → Examples → [Library] → [Example Sketch]
 
-### Notes
-- All sensors tested with Arduino Uno R3 compatibility
-- I2C sensors use: SDA=A4, SCL=A5 (Uno)
-- Check voltage requirements (3.3V vs 5V)
-- Gas sensors need 24-48h warmup for calibration
 
 ---
 
@@ -261,17 +218,7 @@ dotinoproject/
         └── home_environment_dashboard.ino
 ```
 
----
 
-## Contributing
-
-1. Place `.ino` file in `projects/`
-2. Include wiring diagram in header comments
-3. Add row to appropriate README table
-4. Add new sensors to the Sensors Reference section above
 
 ---
 
-## License
-
-MIT
