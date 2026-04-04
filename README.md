@@ -186,6 +186,37 @@ Arduino Home & Automation Projects — practical, well-documented projects with 
 | IR Receiver/LED TSOP38238 | 38kHz IR receiver module. Decode from TV remotes, AC remotes. Digital output. | [Source](https://github.com/Arduino-IRremote/Arduino-IRremote) | IRremote Ken Shirriff's |
 
 
+### ⚡ Actuators (5)
+
+| Actuator | Description | GitHub Library | Arduino Library |
+|----------|-------------|----------------|-----------------|
+| 28BYJ-48 Stepper Motor | Cheap, precise 5V stepper with ULN2003 driver board. Great for clocks, gates, and small robots. | [Source](https://github.com/arduino-libraries/Stepper) | Stepper (built-in) |
+| A4988 / DRV8825 Driver | Microstepping drivers for NEMA 17/23 stepper motors. Controls speed/direction with 2 pins. | [Source](https://github.com/laurb9/StepperDriver) | A4988 Stepper Driver |
+| MG996R Metal Servo | High torque (10kg-cm) standard servo with metal gears. Good for robot arms/car steering. | [Source](https://github.com/RoboticsBrno/ServoESP32) | Servo.h (built-in) |
+| Solid State Relay (SSR) | Silent, fast switching for AC loads. Opto-isolated input switches 24-380VAC without mechanical parts. | [Source](https://github.com/panStamp/relay) | Built into Arduino (digitalWrite) |
+| Vibration Motor (DC Disc) | Small coin/disc motor for haptic feedback. Driven via PWM/Transistor for intensity control. | [Source](https://github.com/adafruit/Adafruit_SensorLab) | Built into Arduino (analogWrite) |
+
+### 📡 Wireless & Positioning (4)
+
+| Module | Description | GitHub Library | Arduino Library |
+|--------|-------------|----------------|-----------------|
+| NEO-6M / NEO-M8N GPS | Ublox GPS module with ceramic antenna. Serial UART. Tracks location, speed, time, satellites. | [Source](https://github.com/mikalhart/TinyGPSPlus) | TinyGPSPlus |
+| SIM800L GSM/GPRS | Quad-band cellular module. Send SMS, make calls, GPRS data. Requires 3.7V-4.2V LiPo usually. | [Source](https://github.com/vshymanskyy/TinyGSM) | TinyGSM |
+| ESP32 (Co-processor) | Dual-core WiFi/BT module. Can run Arduino sketches or act as modem for Uno via UART. | [Source](https://github.com/nkolban/ESP32_BLE_Arduino) | ESP32 Arduino Core |
+| MCP2515 CAN Bus | Controller Area Network transceiver for automotive/industrial buses. SPI interface. | [Source](https://github.com/coryjfowler/MCP_CAN_lib) | MCP_CAN_lib |
+
+### 📟 Compatible Boards (7)
+
+| Board | Description | GitHub Core | Notes |
+|-------|-------------|-------------|-------|
+| ESP32 DevKit V1 | Dual core Xtensa LX6, WiFi, Bluetooth 4.2/BLE. 520KB SRAM. | [Source](https://github.com/espressif/arduino-esp32) | High power, cheap, popular IoT board |
+| Wemos D1 Mini | ESP8266-based, very small form factor. Built-in WiFi. 4MB Flash. | [Source](https://github.com/esp8266/Arduino) | Great for sensors/IoT nodes |
+| STM32 Blue Pill | ARM Cortex-M3 (72MHz). 64KB SRAM, 128KB Flash. 3.3V logic. | [Source](https://github.com/stm32duino/Arduino_Core_STM32) | Much faster than Uno, cheap |
+| Seeeduino XIAO | SAMD21 ARM Cortex-M0+, tiny size (thumb). USB-C. | [Source](https://github.com/Seeed-Studio/ArduinoCore-samd) | Smallest Arduino, wearables |
+| Arduino Mega 2560 | ATmega2560, 256KB Flash, 54 Digital I/O. | [Source](https://github.com/arduino/ArduinoCore-avr) | Best for complex projects needing many pins |
+| Digispark (ATtiny85) | ATtiny85, 6KB Flash, 6 pins. Programmable via USB (bitbang). | [Source](https://github.com/digistump/DigistumpArduino) | Tiny standalone projects |
+| Teensy 4.1 | ARM Cortex-M7 (600MHz). Huge memory, high speed. | [Source](https://github.com/PaulStoffregen/cores) | High-performance, audio, complex graphics |
+
 
 ---
 
