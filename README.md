@@ -124,6 +124,8 @@ Use this when a library isn't available in the Arduino Library Manager, or when 
 | MQ-131 (Ozone) | Ozone (O3) detection. Low concentration: 10-1000ppb. High concentration: 1-300ppm. | [Source](https://github.com/ostaquet/Arduino-MQ131-driver) | MQ131 Ozone Driver |
 | MQ-4 (Methane/Natural Gas) | Natural gas (methane/CH4) and CNG detection. Fast response time. | [Source](https://github.com/miguel5612/MQSensorsLib) | MQUnifiedsensor (MQSensorsLib) |
 
+***NOTE**: For MQ Series sensor you can use Unified [MQSensorsLib](https://github.com/miguel5612/MQSensorsLib) in MQ-4  
+
 ### 📏 Distance & Ranging (2)
 
 | Sensor | Description | GitHub Library | Library |
