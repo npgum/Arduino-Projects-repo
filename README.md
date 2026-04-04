@@ -258,7 +258,7 @@ Use this when a library isn't available in the Arduino Library Manager, or when 
 | Sensor | Description | GitHub Library | Library |
 |--------|-------------|----------------|-----------------|
 | MAX30102 | Pulse oximeter and heart rate monitor via PPG. Measures SpO2 and BPM from fingertip. I2C interface. | [Source](https://github.com/sparkfun/SparkFun_MAX3010x_Sensor_Library) | SparkFun MAX3010x |
-| AD8232 | ECG/heart electrical signal module. Single-lead output amplifies cardiac activity. Analog output. | Custom | Built into Arduino (analogRead) |
+| AD8232 | ECG/heart electrical signal module. Single-lead output amplifies cardiac activity. Analog output. | [Source](https://github.com/sparkfun/AD8232_Heart_Rate_Monitor) | Built into Arduino (analogRead) |
 | MAX30101 | 3-wavelength PPG for SpO2, heart rate, and respiration rate. More versatile than MAX30102. I2C. | [Source](https://github.com/tutrp/Max30101-Arduino-Library) | MAX30101 Arduino |
 
 ### 🌡️ IR & Thermal (2)
