@@ -89,11 +89,9 @@ Install via Arduino IDE → **Sketch → Include Library → Manage Libraries**
 
 ---
 
-## Sensors Reference — 63 Arduino Sensors
 
-> Click "Source" to open the GitHub library. Search the Arduino Library name in the IDE Library Manager.
 
-### 🌡️ Temperature (10)
+### 🌡️ Temperature & Humidity (10)
 
 | Sensor | Description | GitHub Library | Arduino Library |
 |--------|-------------|----------------|-----------------|
@@ -121,36 +119,45 @@ Install via Arduino IDE → **Sketch → Include Library → Manage Libraries**
 | MQ-131 (Ozone) | Ozone (O3) detection. Low concentration: 10-1000ppb. High concentration: 1-300ppm. | [Source](https://github.com/GeorgK/MQ-Sensors) | MQSensor Library |
 | MQ-4 (Methane/Natural Gas) | Natural gas (methane/CH4) and CNG detection. Fast response time. | [Source](https://github.com/emc2314/mq-sensor-lib) | MQ Sensor Library |
 
-### 📏 Distance & Motion (5)
+### 📏 Distance & Ranging (2)
 
 | Sensor | Description | GitHub Library | Arduino Library |
 |--------|-------------|----------------|-----------------|
 | HC-SR04 | Ultrasonic distance sensor. Measures 2-400cm with +/-3mm accuracy. Trig/echo interface. | [Source](https://github.com/LouisD95/HCSR04) | HCSR04 or NewPing |
+| VL53L0X | Time-of-flight laser ranging sensor. 2m max range. I2C interface. Much more accurate than ultrasonic. | [Source](https://github.com/pololu/vl53l0x-arduino) | Pololu VL53L0X Arduino |
+
+### 🏃 Motion & Orientation (5)
+
+| Sensor | Description | GitHub Library | Arduino Library |
+|--------|-------------|----------------|-----------------|
 | PIR HC-SR501 | Passive infrared motion sensor. 3-7m range, 110 degree field of view. 30-60s calibration on startup. | [Source](https://github.com/adafruit/Adafruit_PIR_Sensor) | Built into Arduino (digitalRead) |
 | RCWL-0516 | Microwave Doppler radar motion sensor. 5-7m range. Works through walls, unlike PIR. | [Source](https://github.com/digistump/Rcwl0516) | RCWL0516 Library |
-| VL53L0X | Time-of-flight laser ranging sensor. 2m max range. I2C interface. Much more accurate than ultrasonic. | [Source](https://github.com/pololu/vl53l0x-arduino) | Pololu VL53L0X Arduino |
 | APDS-9960 | RGB color, ambient light, proximity, and gesture sensing via I2C. Hand swipe left/right/up/down. | [Source](https://github.com/sparkfun/SparkFun_APDS-9960_Sensor_Arduino_Library) | SparkFun APDS9960 Library |
+| Tilt Sensor (Ball Switch) | Simple ball-in-cylinder tilt switch. Digital output only (open/closed). Low cost orientation detection. | [Source](https://github.com/adafruit/Tilt_Sensor) | Built into Arduino (digitalRead) |
+| Vibration Sensor (SW-420) | Vibration/impact detection module. Digital output with adjustable threshold potentiometer. | [Source](https://github.com/adafruit/Vibration_Sensor) | Built into Arduino (digitalRead) |
 
-### 🌱 Soil & Water (6)
+### 🌱 Soil & Water (7)
 
 | Sensor | Description | GitHub Library | Arduino Library |
 |--------|-------------|----------------|-----------------|
 | Soil Moisture (Capacitive) | Capacitive soil moisture sensor. Corrosion-resistant. Analog output (lower value = more moisture). | [Source](https://github.com/ArminJo/Capacitive-Soil-Moisture-Sensor-Library) | Capacitive Soil Moisture Library |
 | Soil Moisture (Resistive) | Cheap resistive soil moisture sensor. Corrodes quickly (weeks). Higher value = more moisture. | [Source](https://github.com/adafruit/Adafruit_Capacitive_Soil_Moisture) | Built into Arduino (analogRead) |
 | Rain Sensor (FC-37) | Rain/water drop detection. Analog output (wetness level) + digital threshold output. | [Source](https://github.com/adafruit/Adafruit_Rain_Sensor) | Built into Arduino (analogRead) |
+| LDR (Photoresistor) | Light-dependent resistor. Voltage divider with 10k resistor. Higher value = more light (typically). | [Source](https://github.com/adafruit/Adafruit_LDR) | Built into Arduino (analogRead) |
 | Water Level Sensor | Analog water level sensor. Measures water depth by resistance. Drop shape pad. | [Source](https://github.com/adafruit/Adafruit_Water_Level_Sensor) | Built into Arduino (analogRead) |
 | Flow Sensor (YF-S201) | Water flow rate sensor. Hall effect based. Measures 1-30 L/min. Digital pulse output. | [Source](https://github.com/miguel5612/Arduino_water_flow_meter) | Custom (pulse counting) |
 | PH Sensor (Gravity Analog) | Analog pH meter for water quality testing. 0-14 pH range. BNC connector. | [Source](https://github.com/DFRobot/DFRobot_PH) | DFRobot PH Library |
 
-### 💡 Light & Color (3)
+### 💡 Light & Vision (4)
 
 | Sensor | Description | GitHub Library | Arduino Library |
 |--------|-------------|----------------|-----------------|
-| LDR (Photoresistor) | Light-dependent resistor. Voltage divider with 10k resistor. Higher value = more light (typically). | [Source](https://github.com/adafruit/Adafruit_LDR) | Built into Arduino (analogRead) |
 | BH1750 | Digital ambient light sensor. Measures lux (1-65535). I2C interface. Much more accurate than LDR. | [Source](https://github.com/claws/BH1750) | BH1750 Library |
 | TCS3200/TCS34725 | RGB color light-to-frequency converter. Detects actual colors, not just brightness. | [Source](https://github.com/adafruit/Adafruit_TCS34725) | Adafruit TCS34725 |
+| UV Sensor (VEML6070/ML8511) | Measures UV-A/UV-B radiation. I2C or analog output. Sun exposure monitoring. | [Source](https://github.com/adafruit/Adafruit_VEML6070) | Adafruit VEML6070 |
+| IR Flame Sensor | Detects infrared light from flames (760-1100nm). Digital + analog output. | [Source](https://github.com/adafruit/Flame_Sensor) | Built into Arduino (analogRead) |
 
-### 🔄 IMU & Compass (4)
+### 🧭 IMU & Compass (4)
 
 | Sensor | Description | GitHub Library | Arduino Library |
 |--------|-------------|----------------|-----------------|
@@ -168,7 +175,7 @@ Install via Arduino IDE → **Sketch → Include Library → Manage Libraries**
 | Nokia 5110 LCD | 84x48 pixel monochrome LCD. SPI interface. Cheap, large-ish screen. | [Source](https://github.com/adafruit/Adafruit-PCD8544-Nokia-5110-LCD-library) | Adafruit PCD8544 Nokia 5110 |
 | MAX7219 LED Dot Matrix | 8x8 LED dot matrix module (daisy-chainable). SPI communication. Can chain many modules. | [Source](https://github.com/markruys/arduino-Max72xxPanel) | Adafruit MAX7219 or MD_Parola |
 
-### ⚡ Motors & Relays (4)
+### ⚡ Motors, Drivers & Relays (4)
 
 | Sensor | Description | GitHub Library | Arduino Library |
 |--------|-------------|----------------|-----------------|
@@ -177,7 +184,7 @@ Install via Arduino IDE → **Sketch → Include Library → Manage Libraries**
 | L298N Motor Driver | Dual H-bridge motor driver. Controls 2 DC motors or 1 stepper. Up to 2A per channel. | [Source](https://github.com/gioblu/PJON) | Built into Arduino (digitalWrite/analogWrite) |
 | L293D Motor Shield | Arduino shield for driving 2 stepper motors or 4 DC motors. Up to 600mA per channel. | [Source](https://github.com/adafruit/Adafruit_Motor_Shield_library) | Adafruit Motor Shield Library |
 
-### 📡 Communication (4)
+### 📡 Communication & IR (5)
 
 | Sensor | Description | GitHub Library | Arduino Library |
 |--------|-------------|----------------|-----------------|
@@ -185,6 +192,7 @@ Install via Arduino IDE → **Sketch → Include Library → Manage Libraries**
 | nRF24L01 | 2.4GHz wireless transceiver. 1km+ range with antenna version. SPI interface. Multiple nodes. | [Source](https://github.com/nRF24/RF24) | RF24 Library |
 | ESP8266 (WiFi) | ESP-01/ESP-12 WiFi module. Can also run standalone programs. Connect Arduino to internet. | [Source](https://github.com/ekstrand/ESP8266wifi) | ESP8266WiFi or SoftwareSerial AT mode |
 | LoRa SX1278/SX1276 | Long-range (up to 10km) low-power wireless. 433MHz/868MHz/915MHz. SPI interface. | [Source](https://github.com/sandeepmistry/arduino-LoRa) | arduino-LoRa by Sandeep Mistry |
+| IR Receiver/LED TSOP38238 | 38kHz IR receiver module. Decode from TV remotes, AC remotes. Digital output. | [Source](https://github.com/crankyoldgit/IRremoteESP8266) | IRremote or IRemoteESP8266 |
 
 ### 🔊 Sound & Audio (3)
 
@@ -194,7 +202,7 @@ Install via Arduino IDE → **Sketch → Include Library → Manage Libraries**
 | DFPlayer Mini MP3 | Mini MP3 player module. Plays MP3/WAV from micro SD card or USB. Serial control. | [Source](https://github.com/DFRobot/DFRobotDFPlayerMini) | DFRobotDFPlayerMini |
 | MAX98357A I2S Amplifier | 3W mono Class D amplifier with I2S input. Direct digital audio from I2S pins. | [Source](https://github.com/adafruit/Adafruit_MAX98357) | Adafruit_MAX98357 |
 
-### 🔒 Access & Biometric (3)
+### 🔒 Security & Biometrics (3)
 
 | Sensor | Description | GitHub Library | Arduino Library |
 |--------|-------------|----------------|-----------------|
@@ -202,24 +210,15 @@ Install via Arduino IDE → **Sketch → Include Library → Manage Libraries**
 | Fingerprint Sensor (R503) | Optical fingerprint sensor with onboard processing. UART or USB interface. Stores up to 3000 prints. | [Source](https://github.com/adafruit/Adafruit-Fingerprint-Sensor-Library) | Adafruit Fingerprint |
 | PN532 NFC/RFID | NFC reader/writer. Supports I2C, SPI, HSU modes. Reads NFC tags, emulates cards. | [Source](https://github.com/adafruit/Adafruit-PN532) | Adafruit PN532 |
 
-### 🔌 Electrical (2)
+### ⏱️ Measurement & Timing (4)
 
 | Sensor | Description | GitHub Library | Arduino Library |
 |--------|-------------|----------------|-----------------|
 | ACS712 | Hall-effect based AC/DC current sensor. Available in 5A, 20A, 30A variants. Analog output. | [Source](https://github.com/RobertTW/ACS712-Arduino-Library) | ACS712 Current Sensor Library |
 | ZMPT101B | AC voltage sensor module. Measures 220V/110V AC mains voltage safely. Analog output. | [Source](https://github.com/limagiran/zmpt101b-arduino) | ZMPT101B Library |
-
-### 🔧 Other (6)
-
-| Sensor | Description | GitHub Library | Arduino Library |
-|--------|-------------|----------------|-----------------|
-| UV Sensor (VEML6070/ML8511) | Measures UV-A/UV-B radiation. I2C or analog output. Sun exposure monitoring. | [Source](https://github.com/adafruit/Adafruit_VEML6070) | Adafruit VEML6070 |
-| IR Receiver/LED TSOP38238 | 38kHz IR receiver module. Decode from TV remotes, AC remotes. Digital output. | [Source](https://github.com/crankyoldgit/IRremoteESP8266) | IRremote or IRemoteESP8266 |
-| IR Flame Sensor | Detects infrared light from flames (760-1100nm). Digital + analog output. | [Source](https://github.com/adafruit/Flame_Sensor) | Built into Arduino (analogRead) |
 | DS3231 RTC | High precision real-time clock with temperature compensation. I2C. Built-in battery backup. | [Source](https://github.com/adafruit/RTClib) | RTClib by Adafruit |
 | HX711 Load Cell | 24-bit ADC for load cells. Weighing scale bridge sensor. Very high resolution. | [Source](https://github.com/bogde/HX711) | HX711 Arduino Library by bogde |
-| Tilt Sensor (Ball Switch) | Simple ball-in-cylinder tilt switch. Digital output only (open/closed). Low cost orientation detection. | [Source](https://github.com/adafruit/Tilt_Sensor) | Built into Arduino (digitalRead) |
-| Vibration Sensor (SW-420) | Vibration/impact detection module. Digital output with adjustable threshold potentiometer. | [Source](https://github.com/adafruit/Vibration_Sensor) | Built into Arduino (digitalRead) |
+
 
 ---
 
