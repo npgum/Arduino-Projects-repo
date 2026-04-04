@@ -91,22 +91,22 @@ We want to appreciate and recognize the **open-source library creators and maker
 
 | Sensor | Description | GitHub Source | Library |
 |----------|------------------------------|--------------------|--------------------|
-| PIR HC-SR501 | Passive IR motion. 3-7m range. | [Source](https://github.com/limorfru/Adafruit_PIR) | Built-in (digitalRead) — Arduino Core |
+| PIR HC-SR501 | Passive IR motion. 3-7m range. | [Source](https://github.com/arduino/ArduinoCore-avr) | Built-in (digitalRead) — Arduino Core |
 | RCWL-0516 | Microwave Doppler radar motion. Works through walls. | [Source](https://github.com/jdesbonnet/RCWL-0516) | RCWL-0516 Arduino Library |
 | APDS-9960 | RGB color, ambient light, proximity, gesture via I2C. | [Source](https://github.com/sparkfun/SparkFun_APDS-9960_Sensor_Arduino_Library) | SparkFun APDS9960 Library |
-| Tilt Sensor (Ball) | Digital ball-in-cylinder tilt switch. | [Source](https://github.com/mprograms/Detect-Tilt-Arduino) | Built-in (digitalRead) — Arduino Core |
-| Vibration Sensor (SW-420) | Digital vibration/impact detection. | [Source](https://github.com/mprograms/Detect-Tilt-Arduino) | Built-in (digitalRead) — Arduino Core |
+| Tilt Sensor (Ball) | Digital ball-in-cylinder tilt switch. | [Source](https://github.com/arduino/ArduinoCore-avr) | Built-in (digitalRead) — Arduino Core |
+| Vibration Sensor (SW-420) | Digital vibration/impact detection. | [Source](https://github.com/arduino/ArduinoCore-avr) | Built-in (digitalRead) — Arduino Core |
 
 
 ### 💡 Light & Vision (5)
 
 | Sensor | Description | GitHub Source | Library |
 |----------|------------------------------|--------------------|--------------------|
-| LDR (Photoresistor) | Light-dependent resistor via voltage divider. | [Source](https://github.com/adafruit/Adafruit_SensorLab) | Built-in (analogRead) — Arduino Core |
+| LDR (Photoresistor) | Light-dependent resistor via voltage divider. | [Source](https://github.com/arduino/ArduinoCore-avr) | Built-in (analogRead) — Arduino Core |
 | BH1750 | Digital lux meter via I2C. 1-65535 lux. | [Source](https://github.com/claws/BH1750) | BH1750 Library |
 | TCS3200/TCS34725 | RGB color light-to-frequency converter. | [Source](https://github.com/adafruit/Adafruit_TCS34725) | Adafruit TCS34725 |
 | UV Sensor (VEML6070) | UV-A/UV-B radiation sensor via I2C. | [Source](https://github.com/adafruit/Adafruit_VEML6070) | Adafruit VEML6070 |
-| IR Flame Sensor | Flame detection (760-1100nm infrared). | [Source](https://github.com/adafruit/Adafruit_SensorLab) | Built-in (analogRead) — Arduino Core |
+| IR Flame Sensor | Flame detection (760-1100nm infrared). | [Source](https://github.com/arduino/ArduinoCore-avr) | Built-in (analogRead) — Arduino Core |
 
 
 ### 🌱 Soil & Water (6)
@@ -114,10 +114,10 @@ We want to appreciate and recognize the **open-source library creators and maker
 | Sensor | Description | GitHub Source | Library |
 |----------|------------------------------|--------------------|--------------------|
 | Soil Moisture (Capacitive) | Corrosion-resistant analog moisture detector. | [Source](https://github.com/ArminJo/Arduino-SensorKit) | Soil Moisture Sensor Library |
-| Soil Moisture (Resistive) | Basic cheap analog moisture (corrodes quickly). | [Source](https://github.com/adafruit/Adafruit_SensorLab) | Built-in (analogRead) — Arduino Core |
-| Rain Sensor (FC-37) | Analog/digital rain detection. | [Source](https://github.com/adafruit/Adafruit_SensorLab) | Built-in (analogRead) — Arduino Core |
-| Water Level Sensor | Analog depth detection via exposed pad. | [Source](https://github.com/ArminJo/Arduino-SensorKit) | Built-in (analogRead) — Arduino Core |
-| Flow Sensor (YF-S201) | Hall effect water flow (1-30 L/min). | [Source](https://github.com/adafruit/Adafruit_SensorLab) | pulseIn() — Arduino Core |
+| Soil Moisture (Resistive) | Basic cheap analog moisture (corrodes quickly). | [Source](https://github.com/arduino/ArduinoCore-avr) | Built-in (analogRead) — Arduino Core |
+| Rain Sensor (FC-37) | Analog/digital rain detection. | [Source](https://github.com/arduino/ArduinoCore-avr) | Built-in (analogRead) — Arduino Core |
+| Water Level Sensor | Analog depth detection via exposed pad. | [Source](https://github.com/arduino/ArduinoCore-avr) | Built-in (analogRead) — Arduino Core |
+| Flow Sensor (YF-S201) | Hall effect water flow (1-30 L/min). | [Source](https://github.com/arduino/ArduinoCore-avr) | pulseIn() — Arduino Core |
 | pH Sensor (Gravity) | 0-14 pH analog meter via BNC connector. | [Source](https://github.com/DFRobot/DFRobot_PH) | DFRobot PH Library |
 
 
@@ -200,10 +200,10 @@ We want to appreciate and recognize the **open-source library creators and maker
 
 | Module | Description | GitHub Source | Library |
 |----------|------------------------------|--------------------|--------------------|
-| Sound Sensor (KY-037) | Analog/digital sound detection module. | [Source](https://github.com/adafruit/Adafruit_Loudness_Sensor) | Built-in (analogRead/digitalRead) — Arduino Core |
+| Sound Sensor (KY-037) | Analog/digital sound detection module. | [Source](https://github.com/arduino/ArduinoCore-avr) | Built-in (analogRead/digitalRead) — Arduino Core |
 | DFPlayer Mini MP3 | MP3/WAV player from micro SD card via UART. | [Source](https://github.com/DFRobot/DFRobotDFPlayerMini) | DFRobotDFPlayerMini |
 | MAX98357A I2S | 3W mono Class D amplifier via I2S. | [Source](https://github.com/adafruit/Adafruit_MAX98357) | Adafruit MAX98357A |
-| INMP441 | MEMS omnidirectional mic via I2S. High quality. | [Source](https://github.com/espressif/esp-idf/tree/master/components/driver/i2s) | I2S (ESP32 built-in) — ESP32 Arduino Core |
+| INMP441 | MEMS omnidirectional mic via I2S. High quality. | [Source](https://github.com/espressif/arduino-esp32) | I2S (ESP32 built-in) — ESP32 Arduino Core |
 
 
 ### 📡 Communication & Wireless (9)
@@ -225,15 +225,15 @@ We want to appreciate and recognize the **open-source library creators and maker
 
 | Actuator | Description | GitHub Source | Library |
 |----------|------------------------------|--------------------|--------------------|
-| 5V Relay Module | Electromechanical relay for AC/DC loads. Active-low. | [Source](https://github.com/adafruit/Adafruit_FeatherWing_Dual_Relay) | Built-in (digitalWrite) — Arduino Core |
-| SG90 Micro Servo | 9g micro servo (180°). 4.8V. | [Source](https://github.com/RoboticsBrno/ServoESP32) | Servo.h — Arduino Core |
-| MG996R Metal Servo | High torque (10kg-cm) metal gear servo. | [Source](https://github.com/RoboticsBrno/ServoESP32) | Servo.h — Arduino Core |
+| 5V Relay Module | Electromechanical relay for AC/DC loads. Active-low. | [Source](https://github.com/arduino/ArduinoCore-avr) | Built-in (digitalWrite) — Arduino Core |
+| SG90 Micro Servo | 9g micro servo (180°). 4.8V. | [Source](https://github.com/arduino-libraries/Servo) | Servo.h — Arduino Core |
+| MG996R Metal Servo | High torque (10kg-cm) metal gear servo. | [Source](https://github.com/arduino-libraries/Servo) | Servo.h — Arduino Core |
 | L298N Motor Driver | Dual H-bridge for 2 DC motors or 1 stepper. | [Source](https://github.com/AndreaLombardo/L298N) | L298N Library |
 | L293D Motor Shield | Shield for 2 steppers or 4 DC motors. | [Source](https://github.com/adafruit/Adafruit_Motor_Shield_V2_Library) | Adafruit Motor Shield V2 |
-| Solid State Relay (SSR) | Silent AC switching (24-380VAC) via opto-isolation. | [Source](https://github.com/panStamp/relay) | Built-in (digitalWrite) — Arduino Core |
+| Solid State Relay (SSR) | Silent AC switching (24-380VAC) via opto-isolation. | [Source](https://github.com/arduino/ArduinoCore-avr) | Built-in (digitalWrite) — Arduino Core |
 | 28BYJ-48 Stepper | 5V stepper with ULN2003 driver. | [Source](https://github.com/arduino-libraries/Stepper) | Stepper — Arduino Core |
 | A4988 / DRV8825 Driver | Microstepping drivers for NEMA 17/23. 2-pin control. | [Source](https://github.com/laurb9/StepperDriver) | A4988 Stepper Driver |
-| Vibration Motor (DC) | Small coin/disc motor via PWM/Transistor. | [Source](https://github.com/adafruit/Adafruit_SensorLab) | Built-in (analogWrite) — Arduino Core |
+| Vibration Motor (DC) | Small coin/disc motor via PWM/Transistor. | [Source](https://github.com/arduino/ArduinoCore-avr) | Built-in (analogWrite) — Arduino Core |
 
 
 ### 📟 Compatible Boards (7)
