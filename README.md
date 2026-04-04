@@ -41,7 +41,17 @@ Arduino Home & Automation Projects — practical, well-documented projects with 
 
 ---
 
-## Sensor
+### 🫶 Built by the Community
+
+Every project in this repository stands on the shoulders of giants. We want to take a moment to appreciate and recognize the **open-source library creators and makers** whose hard work made these projects possible.
+
+From the precise temperature readings of the DHT libraries to the seamless displays driven by LCD wrappers, and the robust drivers for motors, relays, and wireless modules — none of this exists in a vacuum. We are deeply grateful to the developers, tinkerers, and educators who freely share their code, troubleshoot issues, and document their hardware so we can build, learn, and innovate without reinventing the wheel.
+
+**To the makers who write the drivers, document the wiring, and share their knowledge:** Thank you. This project is as much yours as it is ours.
+
+---
+
+## Sensors
 
 
 
