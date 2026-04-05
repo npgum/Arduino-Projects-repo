@@ -51,7 +51,7 @@ We want to appreciate and recognize the **open-source library creators and maker
 
 ### 🌡️ Temperature & Humidity (10)
 
-| Sensor | Description | GitHub Source | Library |
+| Sensor | Description |  Source | Library |
 |----------|------------------------------|--------------------|--------------------|
 | DHT11 | Low-cost digital temperature/humidity. Max read every 2s. | [Source](https://github.com/adafruit/DHT-sensor-library) | DHT sensor library (Adafruit) |
 | DHT22/AM2302 | Higher accuracy (-40 to 80C) temp/humidity. | [Source](https://github.com/adafruit/DHT-sensor-library) | DHT sensor library (Adafruit) |
@@ -67,7 +67,7 @@ We want to appreciate and recognize the **open-source library creators and maker
 
 ### 💨 Gas & Air Quality (8)
 
-| Sensor | Description | GitHub Source | Library |
+| Sensor | Description |  Source | Library |
 |----------|------------------------------|--------------------|--------------------|
 | MQ-2 | LPG, propane, hydrogen, methane, and smoke detection. | [Source](https://github.com/miguel5612/MQSensorsLib) | MQUnifiedsensor (MQSensorsLib) |
 | MQ-7 | Carbon monoxide (CO) detection. | [Source](https://github.com/miguel5612/MQSensorsLib) | MQUnifiedsensor (MQSensorsLib) |
@@ -81,7 +81,7 @@ We want to appreciate and recognize the **open-source library creators and maker
 
 ### 📏 Distance & Ranging (2)
 
-| Sensor | Description | GitHub Source | Library |
+| Sensor | Description |  Source | Library |
 |----------|------------------------------|--------------------|--------------------|
 | HC-SR04 | Ultrasonic distance sensor. 2-400cm. | [Source](https://github.com/Martinsos/arduino-lib-hc-sr04) | HCSR04 or NewPing |
 | VL53L0X | Time-of-flight laser ranging. 2m max, I2C. | [Source](https://github.com/pololu/vl53l0x-arduino) | Pololu VL53L0X Arduino |
@@ -89,7 +89,7 @@ We want to appreciate and recognize the **open-source library creators and maker
 
 ### 🏃 Motion & Orientation (5)
 
-| Sensor | Description | GitHub Source | Library |
+| Sensor | Description |  Source | Library |
 |----------|------------------------------|--------------------|--------------------|
 | PIR HC-SR501 | Passive IR motion. 3-7m range. | [Source](https://github.com/deangi/PIRSensor) | PIRSensor - deangi |
 | RCWL-0516 | Microwave Doppler radar motion. Works through walls. | [Source](https://github.com/jdesbonnet/RCWL-0516) | RCWL-0516 Arduino Library |
@@ -100,7 +100,7 @@ We want to appreciate and recognize the **open-source library creators and maker
 
 ### 💡 Light & Vision (5)
 
-| Sensor | Description | GitHub Source | Library |
+| Sensor | Description |  Source | Library |
 |----------|------------------------------|--------------------|--------------------|
 | LDR (Photoresistor) | Light-dependent resistor via voltage divider. | [Source](https://github.com/QuentinCG/Arduino-Light-Dependent-Resistor-Library) | LightDependentResistor - QuentinCG |
 | BH1750 | Digital lux meter via I2C. 1-65535 lux. | [Source](https://github.com/claws/BH1750) | BH1750 Library |
@@ -111,7 +111,7 @@ We want to appreciate and recognize the **open-source library creators and maker
 
 ### 🌱 Soil & Water (6)
 
-| Sensor | Description | GitHub Source | Library |
+| Sensor | Description |  Source | Library |
 |----------|------------------------------|--------------------|--------------------|
 | Soil Moisture (Capacitive) | Corrosion-resistant analog moisture detector. | [Source](https://github.com/ArminJo/Arduino-SensorKit) | Soil Moisture Sensor Library |
 | Soil Moisture (Resistive) | Basic cheap analog moisture (corrodes quickly). | [Source](https://github.com/SolderedElectronics/Soldered-Simple-Soil-Humidity-Sensor-Arduino-Library) | Soldered Simple Soil Humidity Sensor - SolderedElectronics |
@@ -123,7 +123,7 @@ We want to appreciate and recognize the **open-source library creators and maker
 
 ### 💧 Water Quality (2)
 
-| Sensor | Description | GitHub Source | Library |
+| Sensor | Description |  Source | Library |
 |----------|------------------------------|--------------------|--------------------|
 | TDS Meter (Gravity) | Measures water purity via conductivity. | [Source](https://github.com/DFRobot/DFRobot_TDS) | DFRobot TDS |
 | Turbidity Sensor SEN0189 | Water clarity via light scattering. | [Source](https://github.com/duyhuynh/Turbidity_Sensor) | DTH_Turbidity_Sensor |
@@ -131,7 +131,7 @@ We want to appreciate and recognize the **open-source library creators and maker
 
 ### 🧭 IMU & Compass (7)
 
-| Sensor | Description | GitHub Source | Library |
+| Sensor | Description |  Source | Library |
 |----------|------------------------------|--------------------|--------------------|
 | MPU6050 | 6-axis IMU: 3-axis accel + gyro via I2C. | [Source](https://github.com/Tockn/MPU6050_tockn) | MPU6050_tockn or Adafruit MPU6050 |
 | MPU9250 | 9-axis IMU: accel + gyro + magnetometer. | [Source](https://github.com/sparkfun/SparkFun_MPU-9250-DMP_Arduino_Library) | SparkFun MPU-9250 DMP |
@@ -144,7 +144,7 @@ We want to appreciate and recognize the **open-source library creators and maker
 
 ### 🔥 IR & Thermal (2)
 
-| Sensor | Description | GitHub Source | Library |
+| Sensor | Description |  Source | Library |
 |----------|------------------------------|--------------------|--------------------|
 | MLX90614 | Non-contact IR thermometer (-40 to 300C). I2C. | [Source](https://github.com/adafruit/Adafruit-MLX90614-Library) | Adafruit MLX90614 |
 | MLX90640 | 32x24 pixel thermal imaging camera via I2C. | [Source](https://github.com/adafruit/Adafruit_MLX90640) | Adafruit MLX90640 |
@@ -152,7 +152,7 @@ We want to appreciate and recognize the **open-source library creators and maker
 
 ### 🔒 Security & Biometrics (3)
 
-| Sensor | Description | GitHub Source | Library |
+| Sensor | Description |  Source | Library |
 |----------|------------------------------|--------------------|--------------------|
 | RFID RC522 | 13.56MHz RFID/NFC reader via SPI. | [Source](https://github.com/miguelbalboa/rfid) | MFRC522 Library |
 | Fingerprint (R503) | Optical fingerprint sensor. UART or USB. | [Source](https://github.com/adafruit/Adafruit-Fingerprint-Sensor-Library) | Adafruit Fingerprint |
@@ -161,7 +161,7 @@ We want to appreciate and recognize the **open-source library creators and maker
 
 ### ⏱️ Measurement & Timing (4)
 
-| Sensor | Description | GitHub Source | Library |
+| Sensor | Description |  Source | Library |
 |----------|------------------------------|--------------------|--------------------|
 | ACS712 | AC/DC current sensor (5A/20A/30A). Analog output. | [Source](https://github.com/RTW88/ACS712-Arduino-Library) | ACS712 Current Sensor |
 | ZMPT101B | AC mains voltage sensor module. Analog output. | [Source](https://github.com/limagiran/zmpt101b-arduino) | ZMPT101B Library |
@@ -171,7 +171,7 @@ We want to appreciate and recognize the **open-source library creators and maker
 
 ### 🌡️ Pressure & Weather (2)
 
-| Sensor | Description | GitHub Source | Library |
+| Sensor | Description |  Source | Library |
 |----------|------------------------------|--------------------|--------------------|
 | LPS22HB | Piezoresistive pressure (260-1260 hPa). I2C/SPI. | [Source](https://github.com/pololu/lps22hb-arduino) | Pololu LPS22HB |
 | MS5611 | High-res barometric altimeter (10cm resolution). | [Source](https://github.com/millerlp/MS5611) | MS5611 Arduino |
@@ -179,7 +179,7 @@ We want to appreciate and recognize the **open-source library creators and maker
 
 ### ❤️ Health & Biomedical (3)
 
-| Sensor | Description | GitHub Source | Library |
+| Sensor | Description |  Source | Library |
 |----------|------------------------------|--------------------|--------------------|
 | MAX30102 | Pulse oximeter and heart rate monitor (SpO2, BPM). I2C. | [Source](https://github.com/sparkfun/SparkFun_MAX3010x_Sensor_Library) | SparkFun MAX3010x |
 | MAX30101 | 3-wavelength PPG for SpO2, HR, and respiration rate. | [Source](https://github.com/tutrp/Max30101-Arduino-Library) | MAX30101 Arduino |
@@ -188,7 +188,7 @@ We want to appreciate and recognize the **open-source library creators and maker
 
 ### 📺 Displays (4)
 
-| Display | Description | GitHub Source | Library |
+| Display | Description |  Source | Library |
 |----------|------------------------------|--------------------|--------------------|
 | 16x2 LCD (HD44780) | 16×2 characters. Parallel (6 pins) or I2C module (2 pins). | [Source](https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library) | LiquidCrystal or LiquidCrystal_I2C |
 | OLED 0.96" SSD1306 | 128×64 pixel OLED display via I2C. | [Source](https://github.com/adafruit/Adafruit_SSD1306) | Adafruit SSD1306 + GFX |
@@ -198,7 +198,7 @@ We want to appreciate and recognize the **open-source library creators and maker
 
 ### 🔊 Sound & Audio (4)
 
-| Module | Description | GitHub Source | Library |
+| Module | Description |  Source | Library |
 |----------|------------------------------|--------------------|--------------------|
 | Sound Sensor (KY-037) | Analog/digital sound detection module. | [Source](https://github.com/suoapvs/AD_Sensors) | AD_Sensors - suoapvs |
 | DFPlayer Mini MP3 | MP3/WAV player from micro SD card via UART. | [Source](https://github.com/DFRobot/DFRobotDFPlayerMini) | DFRobotDFPlayerMini |
@@ -208,7 +208,7 @@ We want to appreciate and recognize the **open-source library creators and maker
 
 ### 📡 Communication & Wireless (9)
 
-| Module | Description | GitHub Source | Library |
+| Module | Description |  Source | Library |
 |----------|------------------------------|--------------------|--------------------|
 | HC-05/HC-06 Bluetooth | Bluetooth 2.0 serial module (9600 baud). | [Source](https://github.com/RoboCraft/Bluetooth_HC05) | SoftwareSerial + AT commands |
 | nRF24L01 | 2.4GHz wireless. 1km+ range. SPI. | [Source](https://github.com/nRF24/RF24) | RF24 Library |
@@ -223,7 +223,7 @@ We want to appreciate and recognize the **open-source library creators and maker
 
 ### ⚡ Actuators (9)
 
-| Actuator | Description | GitHub Source | Library |
+| Actuator | Description |  Source | Library |
 |----------|------------------------------|--------------------|--------------------|
 | 5V Relay Module | Electromechanical relay for AC/DC loads. Active-low. | [Source](https://github.com/suoapvs/RelayModule) | RelayModule - suoapvs |
 | SG90 Micro Servo | 9g micro servo (180°). 4.8V. | [Source](https://github.com/arduino-libraries/Servo) | Servo — arduino-libraries |
@@ -238,7 +238,7 @@ We want to appreciate and recognize the **open-source library creators and maker
 
 ### 📟 Compatible Boards (7)
 
-| Board | Spec | GitHub Core | Notes |
+| Board | Spec |  Core | Notes |
 |----------|------------------------------|--------------------|--------------------|
 | ESP32 DevKit V1 | Xtensa LX6 dual core, WiFi, BLE. 520KB SRAM. | [Source](https://github.com/espressif/arduino-esp32) | Cheap IoT powerhouse |
 | Wemos D1 Mini | ESP8266. Tiny form factor. WiFi. 4MB Flash. | [Source](https://github.com/esp8266/Arduino) | Small sensor nodes |
