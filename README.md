@@ -1,4 +1,4 @@
-# dotinoproject
+# Arduino Sensor Libraries and Projects
 
 Arduino projects and sensor reference catalog.
 
