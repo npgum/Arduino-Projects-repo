@@ -75,7 +75,7 @@ void loop() {
       digitalWrite(relayPin, LOW);   // Light ON
       digitalWrite(statusLed, HIGH);
       lightOn = true;
-      logStatus(motion, lightLevel, isDark);
+      logStatus("MOTION", lightLevel, isDark);
     }
   }
   

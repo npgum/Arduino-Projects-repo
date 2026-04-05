@@ -147,11 +147,13 @@ void setup() {
 
 void loop() {
   // Button press cycles view
-  if (digitalRead(BUTTON_PIN) == LOW) {
+  static bool buttonWas = false;
+  bool buttonIs = digitalRead(BUTTON_PIN) == LOW;
+  if (buttonIs && !buttonWas) {
     currentView = (currentView + 1) % NUM_VIEWS;
     lcd.clear();
-    delay(300);  // Debounce
   }
+  buttonWas = buttonIs;
   
   // Read sensors at intervals
   unsigned long now = millis();
@@ -231,7 +233,6 @@ void logToSerial(float temp, float humidity, int airQuality, int lightLevel,
 void updateLCD(int view, float temp, float humidity, int airQuality, int lightLevel, 
                float distance, bool motion, int soilMoisture) {
   lcd.setCursor(0, 0);
-  lcd.setCursor(0, 1);
   
   switch (view) {
     case 0:  // Temperature + Humidity
