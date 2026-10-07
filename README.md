@@ -30,6 +30,9 @@ drivers, document the wiring, and share their knowledge.** Thank you.
 4. **Open the sketch** and upload. Most of them tell you what to do over the Serial
    Monitor at 9600 baud.
 
+**[PROJECTS.md](PROJECTS.md)** has the full list of all 12 projects with the exact
+hardware each one needs — board, sensors, actuators and pin assignments.
+
 ### Build status
 
 All 12 sketches are compiled against `arduino:avr:uno` (core 1.8.8) and build clean.
