@@ -1,0 +1,99 @@
+name: Compile sketches
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  compile:
+    name: Compile all sketches (arduino:avr:uno)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Install arduino-cli
+        uses: arduino/setup-arduino-cli@v2.0.0
+        with:
+          version: 1.5.1
+
+      # arduino-cli's data dir and user library dir. Keyed on this workflow
+      # file so changing the pinned versions above busts the cache.
+      - name: Cache Arduino core and libraries
+        uses: actions/cache@v6
+        with:
+          path: |
+            ~/.arduino15
+            ~/Arduino/libraries
+          key: arduino-${{ runner.os }}-${{ hashFiles('.github/workflows/compile.yml') }}
+          restore-keys: |
+            arduino-${{ runner.os }}-
+
+      - name: Install AVR core
+        run: arduino-cli core install arduino:avr
+
+      # Servo and LiquidCrystal are NOT bundled with arduino-cli; without them
+      # the two beginner sketches fail with "fatal error: Servo.h: No such file".
+      - name: Install libraries
+        run: |
+          arduino-cli lib install "DHT sensor library"
+          arduino-cli lib install "LiquidCrystal I2C"
+          arduino-cli lib install "LiquidCrystal"
+          arduino-cli lib install "Servo"
+
+      # arduino-cli requires the sketch directory name to match the .ino name,
+      # so each sketch is copied into its own temp dir before compiling.
+      # --clean is mandatory: without it a cached build reports success with no
+      # warnings, which looks like clean code but is only a cache hit.
+      - name: Compile every sketch
+        run: |
+          set -uo pipefail
+          WORK="$(mktemp -d)"
+          fail=0
+
+          {
+            echo "| Sketch | Flash | SRAM | Result |"
+            echo "|---|---|---|---|"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          for ino in projects/*.ino; do
+            name="$(basename "$ino" .ino)"
+            mkdir -p "$WORK/$name"
+            cp "$ino" "$WORK/$name/$name.ino"
+            log="$WORK/$name.log"
+
+            if arduino-cli compile -b arduino:avr:uno --warnings all --clean \
+                 "$WORK/$name" > "$log" 2>&1; then
+              flash="$(grep -oE 'Sketch uses [0-9]+ bytes \([0-9]+%\)' "$log" \
+                       | head -1 | grep -oE '[0-9]+%' || echo '?')"
+              sram="$(grep -oE 'Global variables use [0-9]+ bytes \([0-9]+%\)' "$log" \
+                      | head -1 | grep -oE '[0-9]+%' || echo '?')"
+              echo "| \`$name\` | $flash | $sram | pass |" >> "$GITHUB_STEP_SUMMARY"
+              echo "PASS  $name  (flash $flash, sram $sram)"
+            else
+              echo "| \`$name\` | - | - | **FAIL** |" >> "$GITHUB_STEP_SUMMARY"
+              echo "::error file=projects/$name.ino::$name failed to compile"
+              echo "FAIL  $name"
+              grep -E 'error' "$log" | head -20 || true
+              fail=1
+            fi
+
+            # Surface sketch-level warnings even when the build passes.
+            w="$(grep -E '\.ino:[0-9]+:[0-9]+: warning' "$log" | head -10 || true)"
+            if [ -n "$w" ]; then
+              echo "::warning file=projects/$name.ino::$name compiled with warnings"
+              echo "$w"
+            fi
+          done
+
+          if [ "$fail" -ne 0 ]; then
+            echo "### One or more sketches failed to compile" >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
+          echo "### All sketches compiled" >> "$GITHUB_STEP_SUMMARY"

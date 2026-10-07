@@ -1,6 +1,6 @@
 # Arduino Sensor Libraries and Projects
 
-[![Compile](https://img.shields.io/badge/build-arduino%3Aavr%3Auno-blue)](https://github.com/npgum/Arduino-Projects-repo)
+[![Compile sketches](https://github.com/npgum/Arduino-Projects-repo/actions/workflows/compile.yml/badge.svg)](https://github.com/npgum/Arduino-Projects-repo/actions/workflows/compile.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Projects](https://img.shields.io/badge/projects-12-brightgreen)](projects)
 
@@ -35,6 +35,23 @@ drivers, document the wiring, and share their knowledge.** Thank you.
 All 12 sketches are compiled against `arduino:avr:uno` (core 1.8.8) and build clean.
 Largest is `home_environment_dashboard.ino` at 36% flash / 48% SRAM, so everything
 fits on a plain Uno with room to spare.
+
+That check is automated — [`.github/workflows/compile.yml`](.github/workflows/compile.yml)
+runs it on every push and pull request to `main`, and the badge at the top of this
+file reports the result. Each run also writes a per-sketch flash/SRAM table to the
+workflow summary. Verified locally with `arduino-cli 1.5.1`; the workflow pins the
+same version.
+
+To run the same check yourself:
+
+```bash
+arduino-cli core install arduino:avr
+arduino-cli lib install "DHT sensor library" "LiquidCrystal I2C" "LiquidCrystal" "Servo"
+for ino in projects/*.ino; do
+  n=$(basename "$ino" .ino); mkdir -p "/tmp/$n"; cp "$ino" "/tmp/$n/$n.ino"
+  arduino-cli compile -b arduino:avr:uno --warnings all --clean "/tmp/$n" || echo "FAILED: $n"
+done
+```
 
 ### ⚠️ Before you power anything
 
