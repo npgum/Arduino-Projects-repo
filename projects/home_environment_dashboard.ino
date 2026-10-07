@@ -114,13 +114,11 @@ const int AIR_QUALITY_MODERATE = 300;
 const int LIGHT_DARK_THRESHOLD = 500;
 const int SOIL_MOISTURE_DRY = 450;
 
-// === VIEW LABELS ===
-const char* viewLabels[] = {
-  "Temp:---C Hum:--%",   // View 0
-  "Air:---  Light:---",  // View 1
-  "Water:--- Soil:---",  // View 2
-  "Motion:---- Up:---",  // View 3
-};
+// View names, for reference (LCD content is built in updateLCD()):
+//   0 = Temperature + Humidity
+//   1 = Air Quality + Light Level
+//   2 = Water Level + Soil Moisture
+//   3 = Motion + System Uptime
 
 void setup() {
   Serial.begin(9600);
@@ -189,7 +187,6 @@ void readAllSensors() {
   
   // LDR - Light Level
   int lightLevel = analogRead(SENSOR_LDR);
-  bool isDark = lightLevel < LIGHT_DARK_THRESHOLD;
   
   // Soil Moisture
   int soilMoisture = 0;
@@ -198,7 +195,6 @@ void readAllSensors() {
     delay(10);
   }
   soilMoisture /= 5;
-  bool soilDry = soilMoisture > SOIL_MOISTURE_DRY;
   
   // Ultrasonic - Distance/Water Level
   float distance = measureDistance();
@@ -212,8 +208,10 @@ void readAllSensors() {
               distance, currentMotion, soilMoisture);
   
   // Update LCD for current view
+  // motionDetected is the latched flag (stays set until view 3 shows it), so the
+  // display does not miss a brief trigger between 2-second sensor reads.
   updateLCD(currentView, temp, humidity, airQuality, lightLevel, 
-            distance, currentMotion, soilMoisture);
+            distance, motionDetected, soilMoisture);
 }
 
 void logToSerial(float temp, float humidity, int airQuality, int lightLevel, 
@@ -270,7 +268,7 @@ void updateLCD(int view, float temp, float humidity, int airQuality, int lightLe
       
     case 3:  // Motion + System Uptime
       lcd.print("Motion:");
-      lcd.print(motionDetected ? " YES " : " NO  ");
+      lcd.print(motion ? " YES " : " NO  ");
       lcd.setCursor(0, 1);
       lcd.print("Up: ");
       lcd.print(formatUptime());
@@ -302,10 +300,13 @@ const char* formatUptime() {
   unsigned long hours = minutes / 60;
   unsigned long days = hours / 24;
   
+  // %lu, not %ld: these are unsigned long. On AVR both are 32-bit so the
+  // compiler stays quiet, but %ld prints garbage once uptime passes
+  // LONG_MAX (~24.8 days) — an unattended dashboard will get there.
   if (days > 0) {
-    sprintf(buffer, "%ldd %ldh %ldm", days, hours % 24, minutes % 60);
+    snprintf(buffer, sizeof(buffer), "%lud %luh %lum", days, hours % 24, minutes % 60);
   } else {
-    sprintf(buffer, "%ldh %ldm %lds", hours, minutes % 60, seconds % 60);
+    snprintf(buffer, sizeof(buffer), "%luh %lum %lus", hours, minutes % 60, seconds % 60);
   }
   return buffer;
 }

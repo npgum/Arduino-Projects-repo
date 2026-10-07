@@ -1,8 +1,47 @@
 # Arduino Sensor Libraries and Projects
 
+[![Compile](https://img.shields.io/badge/build-arduino%3Aavr%3Auno-blue)](https://github.com/npgum/Arduino-Projects-repo)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Projects](https://img.shields.io/badge/projects-12-brightgreen)](projects)
+
 Arduino projects and sensor reference catalog.
 
-We want to appreciate and recognize the **open-source library creators and makers** whose hard work made these projects possible.**To the makers who write the library, drivers, document the wiring, and share their knowledge.** Thank you.
+We want to appreciate and recognize the **open-source library creators and makers**
+whose hard work made these projects possible. **To the makers who write the libraries,
+drivers, document the wiring, and share their knowledge.** Thank you.
+
+---
+
+## Getting Started
+
+1. **Install the Arduino IDE** (or `arduino-cli`) and add the **Arduino AVR Boards** core.
+2. **Install the libraries** used by the sketches you want — via
+   *Sketch → Include Library → Manage Libraries*:
+
+   | Library | Author | Used by |
+   |---|---|---|
+   | DHT sensor library | Adafruit | temperature, thermostat, dashboard |
+   | LiquidCrystal I2C | Frank de Brabander | thermostat, air quality, water level, dashboard |
+   | LiquidCrystal | Arduino | lcd_display |
+   | Servo | Arduino | servo_motor_control |
+   | Adafruit Unified Sensor | Adafruit | dependency of DHT library |
+
+3. **Wire it up** — every pin map is in **[WIRING.md](WIRING.md)**, verified against the code.
+4. **Open the sketch** and upload. Most of them tell you what to do over the Serial
+   Monitor at 9600 baud.
+
+### Build status
+
+All 12 sketches are compiled against `arduino:avr:uno` (core 1.8.8) and build clean.
+Largest is `home_environment_dashboard.ino` at 36% flash / 48% SRAM, so everything
+fits on a plain Uno with room to spare.
+
+### ⚠️ Before you power anything
+
+Arduino I/O pins are 3.3–5 V logic and good for ~20 mA. Never drive a pump, relay
+coil, servo or LED strip directly from a pin — use a relay module, MOSFET or
+transistor driver, and give inductive loads a flyback diode. See the power budget
+table at the end of [WIRING.md](WIRING.md).
 
 ---
 
@@ -252,26 +291,50 @@ We want to appreciate and recognize the **open-source library creators and maker
 ## Project Structure
 
 ```
-dotinoproject/
-├── README.md
+Arduino-Projects-repo/
+├── README.md              # this file — project index + sensor catalog
+├── WIRING.md              # pin maps for every project, verified against the code
+├── LICENSE                # MIT
 └── projects/
-    ├── Beginner:
-    │   ├── led_blink.ino
-    │   ├── temperature_sensor.ino
-    │   ├── servo_motor_control.ino
-    │   ├── lcd_display.ino
-    │   └── ultrasonic_distance.ino
-    ├── Home Automation:
-    │   ├── smart_plant_watering.ino
-    │   ├── motion_activated_light.ino
-    │   └── auto_dimming_night_light.ino
-    ├── Monitoring:
-    │   ├── home_thermostat_display.ino
-    │   ├── air_quality_monitor.ino
-    │   └── water_level_monitor.ino
-    └── Advanced:
-        └── home_environment_dashboard.ino
+    ├── led_blink.ino                    ⭐
+    ├── temperature_sensor.ino           ⭐
+    ├── servo_motor_control.ino          ⭐⭐
+    ├── lcd_display.ino                  ⭐⭐
+    ├── ultrasonic_distance.ino          ⭐⭐
+    ├── auto_dimming_night_light.ino     ⭐⭐
+    ├── smart_plant_watering.ino         ⭐⭐⭐
+    ├── motion_activated_light.ino       ⭐⭐⭐
+    ├── home_thermostat_display.ino      ⭐⭐⭐
+    ├── air_quality_monitor.ino          ⭐⭐⭐
+    ├── water_level_monitor.ino          ⭐⭐⭐
+    └── home_environment_dashboard.ino   ⭐⭐⭐⭐⭐
 ```
+
+Sketches live flat in `projects/` so each one opens directly in the Arduino IDE.
+The category headings above are for reading, not folder names.
+
+---
+
+## Contributing
+
+Issues and pull requests are welcome. If you add a project:
+
+- Put the `.ino` in `projects/`.
+- Put the full wiring in the sketch header comment **and** add a section to
+  [WIRING.md](WIRING.md).
+- Compile it for `arduino:avr:uno` before opening the PR.
+
+---
+
+## License
+
+[MIT](LICENSE) — use these freely, including commercially. Attribution appreciated
+but not required.
+
+The sensor libraries linked below carry their own licenses; check each one before
+redistributing. Adafruit and SparkFun libraries are generally MIT or BSD, but a few
+listed here are GPL or CC-BY-SA.
+
 
 
 

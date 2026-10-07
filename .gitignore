@@ -1,0 +1,30 @@
+# Arduino build artifacts
+build/
+*.elf
+*.hex
+*.bin
+*.eep
+*.map
+*.lst
+*.o
+*.d
+*.a
+
+# Arduino IDE / arduino-cli
+.arduino/
+*.ino.bak
+*.ino.orig
+sketch.json
+
+# Editor / OS cruft
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*~
+
+# Python helpers
+__pycache__/
+*.pyc
+venv/
+.venv/
