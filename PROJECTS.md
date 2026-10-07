@@ -7,6 +7,9 @@ not from the README summaries.
 **Verified build target:** `arduino:avr:uno`, core 1.8.8, arduino-cli 1.5.1.
 Flash/SRAM figures come from a real compile (see the badge at the top of the README).
 
+**Also in this file:** [Proposed Projects](#proposed-projects) — a backlog of 14
+unbuilt ideas, chosen for a defensible novelty claim rather than sensor count.
+
 | # | Title | Description | Board | Sensors / Modules | Actuators | Flash | SRAM |
 |---|---|---|---|---|---|---|---|
 | 1 | [LED Blink](projects/led_blink.ino) | Toggles the on-board LED every 1 s (1 s on, 1 s off). Baseline sketch for a fresh board. | Arduino Uno | — | On-board LED (pin 13) | 2% | 0% |
@@ -36,3 +39,84 @@ Flash/SRAM figures come from a real compile (see the badge at the top of the REA
   the sketches compile and fit on an Uno, not that the sensors behave in a real
   room. Thresholds in the soil, light and air-quality sketches are placeholders
   that expect calibration against your own environment.
+
+---
+
+# Proposed Projects
+
+**Status: backlog. None of these are built.** No sketch, no wiring, no verified
+compile — unlike the 12 above.
+
+The 12 projects in this repo are single-sensor demos. They compile and they work,
+but each one is a *praktikum* exercise: the kind of thing a dosen has already seen
+many times over. The proposals below are picked for a different property — each has
+a **built-in novelty claim**, meaning the student can write a real method chapter
+(bab 3) about *how* it works, not just *what* it displays.
+
+That claim, not the hardware difficulty, is what makes a project defensible at
+sidang. It is also what separates work that gets approved from work that gets
+questioned.
+
+## Tier A — Tugas / Praktikum
+
+Fast turnaround, low margin, good for volume. Each is genuinely elektro rather than
+a generic sensor readout, so it still looks like engineering.
+
+| # | Project | Novelty claim (the bab 3 hook) | Key hardware |
+|---|---|---|---|
+| A1 | Digital kWh Meter | Alat ukur mandiri, **dikalibrasi terhadap kWh meter PLN** — report measurable error % | PZEM-004T, SD card, RTC |
+| A2 | Earth Tester | Perbandingan metode **3-titik vs 2-titik** untuk tahanan tanah | Custom probe rig, ADC, OLED |
+| A3 | Over-Current Relay (OCR) | Implementasi **kurva inverse time IEC 60255** di mikrokontroler — plot trip time vs fault current | ACS712, relay, load bank |
+| A4 | Lux Meter Terkalibrasi | Kalibrasi terhadap lux meter referensi, dengan analisis error | BH1750, OLED |
+
+## Tier B — Skripsi
+
+The main tier. Every one of these has a comparison or an optimisation built in, so
+novelty does not have to be invented — it is the experimental design itself.
+
+| # | Project | Novelty claim | Key hardware |
+|---|---|---|---|
+| B1 | **MPPT: Perturb & Observe vs Incremental Conductance** | Comparing two MPPT algorithms on one rig **is** the contribution — plot P-V curves against irradiance | Solar panel, buck converter, INA219, ESP32 |
+| B2 | PID Motor DC: Ziegler-Nichols vs PSO/Firefly | Classical tuning vs metaheuristic — compare settling time, overshoot, ITAE | Encoder motor, L298N |
+| B3 | Fuzzy Logic Control (suhu atau irigasi) | Fuzzy Mamdani vs PID, or fuzzy vs threshold — the **rule base** is the contribution | DHT22 / soil sensor, heater or pump |
+| B4 | Klasifikasi Kualitas Air: KNN vs Naive Bayes | Train on labelled samples to classify layak/minum/tidak | TDS, pH, turbidity sensors |
+| B5 | **Predictive Maintenance: Vibrasi + FFT Envelope** | Detect bearing fault from vibration signature — "deteksi dini kerusakan" reads industrially serious | ADXL345 or MPU6050, motor rig |
+| B6 | Power Quality Analyzer | THD, sag/swell from high-rate sampling + FFT — needs real DSP understanding | ESP32, ZMPT101B, ACS712 |
+
+## Tier C — Premium
+
+High skill moat, few people locally can build these. Only sell to a student who can
+actually carry the explanation.
+
+| # | Project | Novelty claim | Key hardware |
+|---|---|---|---|
+| C1 | **NILM — Non-Intrusive Load Monitoring** | Disaggregate **which appliances** are running from one current sensor at the panel — signature extraction + classification | CT sensor, high-rate ADC, ESP32 |
+| C2 | BLDC Motor — Field Oriented Control | Clarke/Park transforms + PI loops on a three-phase inverter | 3-phase bridge, BLDC, gate drivers |
+| C3 | BMS — SOC Estimation + Cell Balancing | Kalman filter for state-of-charge, plus active/passive balancing | Cell stack, balancing FETs, shunt |
+| C4 | Inverter SPWM Closed-Loop / Grid-Tie | Synchronisation to grid via PLL | H-bridge, LC filter, transformer |
+
+## Constraints that protect the work
+
+1. **Defensibility beats complexity.** If the student cannot explain the project,
+   it fails at sidang — which is a refund, a bad review, or worse. Match the tier to
+   the person, not to the price.
+2. **Variation is not optional.** The same project sold twice at one campus gets
+   both students flagged. Every proposal needs swappable axes: different algorithm,
+   different sensor, different plant, different comparison. Build the *template*,
+   not the artifact.
+3. **Keep a per-campus ledger.** Never sell the same topic twice in one semester at
+   the same faculty. This is the most common way this work goes wrong.
+4. **Never fabricate data.** B4 and C1 need real labelled samples. Synthetic data
+   collapses the moment a penguji asks to see the raw log.
+
+## Suggested build order
+
+1. **B1 (MPPT comparison)** — the volume seller. Clean method, cheap parts, high
+   approval rate, and it extends the sensor-catalog approach already used here.
+2. **B5 (vibration predictive maintenance)** — the differentiator. Scarce,
+   impressive, and justifies a higher tier than any monitoring project.
+3. **C1 (NILM)** — where the real margin is, but only once demand is validated.
+
+> Pricing for each tier is tracked separately from this repo. The effort and
+> hardware cost estimates above are engineering judgements, not quoted prices.
+
